@@ -31,12 +31,12 @@ class TutorialStarterConfig extends Config(
   // CUSTOMIZE THE CORE
   // Uncomment out one (or multiple) of the lines below, and choose
   // how many cores you want.
-  // new freechips.rocketchip.subsystem.WithNBigCores(1) ++    // Specify we want some number of Rocket cores
-  // new boom.common.WithNSmallBooms(1) ++                     // Specify we want some number of BOOM cores
+  new freechips.rocketchip.subsystem.WithNBigCores(1) ++    // Specify we want some number of Rocket cores
+  new boom.common.WithNSmallBooms(1) ++                     // Specify we want some number of BOOM cores
 
   // CUSTOMIZE the L2
   // Uncomment this line, and specify a size if you want to have a L2
-  // new freechips.rocketchip.subsystem.WithInclusiveCache(nBanks=1, nWays=4, capacityKB=128) ++
+  new freechips.rocketchip.subsystem.WithInclusiveCache() ++
 
   new chipyard.config.AbstractConfig
 )

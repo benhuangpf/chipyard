@@ -154,6 +154,10 @@ lazy val chipyard = (project in file("generators/chipyard"))
     dsptools, `rocket-dsp-utils`,
     gemmini, icenet, tracegen, cva6, nvdla, sodor, ibex, fft_generator,
     constellation, mempress, barf, shuttle)
+  // .dependsOn(testchipip, rocketchip, iocell,
+  //   dsptools, `rocket-dsp-utils`,
+  //   sodor,
+  //   )
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(
     libraryDependencies ++= Seq(
