@@ -1,5 +1,9 @@
 {
     "files.watcherExclude": {
         "**/target": true
+    },
+    "files.associations": {
+        "stdio.h": "c",
+        "util.h": "c"
     }
 }

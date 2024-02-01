@@ -12,7 +12,15 @@ class Sodor1StageConfig extends Config(
   new freechips.rocketchip.subsystem.WithNoMemPort ++          // use no external memory
   new freechips.rocketchip.subsystem.WithNBanks(0) ++
   new chipyard.config.AbstractConfig)
-
+class TestConfig extends Config(
+  // Create a Sodor 1-stage core
+  new sodor.common.WithNSodorCores(1, internalTile = sodor.common.Stage1Factory) ++
+  new testchipip.WithSerialTLWidth(32) ++
+  new freechips.rocketchip.subsystem.WithScratchpadsOnly ++    // use sodor tile-internal scratchpad
+  new freechips.rocketchip.subsystem.WithNoMemPort ++          // use no external memory
+  new freechips.rocketchip.subsystem.WithNBanks(0)
+  // new chipyard.config.AbstractConfig
+  )
 class Sodor2StageConfig extends Config(
   // Create a Sodor 2-stage core
   new sodor.common.WithNSodorCores(1, internalTile = sodor.common.Stage2Factory) ++
